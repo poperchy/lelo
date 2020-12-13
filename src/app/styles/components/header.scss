@@ -1,0 +1,210 @@
+.header {
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 2px 4px rgba(5, 66, 112, 0.2);
+  z-index: 90;
+  background: #ffffff;
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+    @media (max-width: 900px) {
+      height: 64px;
+    }
+    img {
+      margin-right: 40px;
+      @media (max-width: 900px) {
+        margin-right: 20px;
+        width: 50px;
+      }
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    transition: .2s;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      z-index: 100;
+      transform: translateX(-100%);
+      background: #C23503;
+      position: fixed;
+      top: 64px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      justify-content: end;
+    }
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
+
+    &--active{
+      transform: translateX(0);
+      transition: .2s;
+      .nav__list{
+        margin-top: 40px;
+        margin-bottom: 30px;
+        gap: 30px;
+      }
+      .nav__item {
+        a{
+          font-family: 'proxima', sans-serif;
+          color: white;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 100%;
+        }
+      }
+      .nav__contacts-mobile{
+        align-items: center;
+        gap: 16px;
+        p{
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 16px;
+        }
+        a{
+          color: white;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 100%;
+        }
+      }
+    }
+    a {
+      font-family: 'proxima', sans-serif;
+    }
+
+    &__list {
+      display: flex;
+      gap: 10px;
+      max-width: 654px;
+      width: 100%;
+      justify-content: space-between;
+      margin-right: 82px;
+
+      a {
+        white-space: nowrap;
+      }
+
+      @media (max-width: 1100px) {
+        margin-right: 20px;
+      }
+      @media (max-width: 900px) {
+        flex-direction: column;
+        margin-right: 0;
+        align-items: center;
+      }
+      @include tablet {
+
+      }
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    &__contacts {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      @media (max-width: 900px) {
+        display: none;
+      }
+      @include tablet {
+
+      }
+      @include mobile {
+        display: none;
+      }
+
+      a {
+        font-family: 'roboto', sans-serif;
+        display: flex;
+        align-items: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 100%;
+        white-space: nowrap;
+        gap: 4px;
+      }
+
+      &-list {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        a {
+          gap: 0;
+        }
+
+        svg {
+          filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+        }
+      }
+    }
+
+    &__contacts-mobile {
+      display: none;
+      @media (max-width: 900px) {
+        display: flex;
+        flex-direction: column;
+      }
+      @include tablet {
+
+      }
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &__btn-mobile {
+      a {
+        font-size: 0;
+        @media (max-width: 900px) {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      display: none;
+      @media (max-width: 900px) {
+        display: flex;
+        align-items: center;
+      }
+      @include tablet {
+
+      }
+      @include mobile {
+        display: flex;
+      }
+    }
+  }
+}
+.nav__contacts-clock{
+  display: flex;align-items: center;
+  gap: 4px;
+}
+.nav__contacts-email{
+  display: flex;align-items: center;
+  gap: 4px;
+}
+.nav__contacts-address{
+  display: flex;align-items: center;
+  gap: 4px;
+}

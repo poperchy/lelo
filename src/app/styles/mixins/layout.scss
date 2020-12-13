@@ -1,0 +1,14 @@
+@mixin tablet() {
+  @media (min-width: $mobileMedia + 1) and (max-width: $tabletMedia) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: $mobileMedia) {
+    @content;
+  }
+}
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
